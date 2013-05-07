@@ -2,6 +2,8 @@ package jxt.dao;
 
 import jxt.model.Finance;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: karl
@@ -12,4 +14,6 @@ import jxt.model.Finance;
 public interface FinanceDAO {
 
     public void addIncident(Finance finance);
+
+    public List<Finance> queryList(String startDate,String endDate);
 }

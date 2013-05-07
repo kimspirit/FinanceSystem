@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,11 +20,27 @@ import javax.annotation.Resource;
 public class FinanceDAOImpl implements FinanceDAO{
 
     private SessionFactory sessionFactory;
+    Session session ;
     @Override
     public void addIncident(Finance finance) {
         //To change body of implemented methods use File | Settings | File Templates.
-        Session session = sessionFactory.getCurrentSession();
+        session = sessionFactory.getCurrentSession();
         session.save(finance);
+    }
+
+    /**
+     *
+     * 查询支出支入
+     */
+    @Override
+    public List<Finance> queryList(String startDate, String endDate) {
+        StringBuffer sqlBuffer = new StringBuffer("select * from Finance where 1=1 ");
+        if(startDate!=null && endDate!=null){
+            sqlBuffer.append("addTime BETWEEN '"+startDate+" ' and '"+endDate+"'");
+        }
+        String sql = sqlBuffer.toString();
+        List<Finance> list = session.createQuery(sql).list();
+        return list;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     public SessionFactory getSessionFactory() {

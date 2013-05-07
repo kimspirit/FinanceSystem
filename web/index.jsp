@@ -12,7 +12,7 @@
     <title></title>
 </head>
 <body>
-<form action="add">
+<form action="add" method="post">
     支入<input name="financeDTO.inCome"/><br>
     支出<input name="financeDTO.outCome"/><br>
     原因<input name="financeDTO.reason"/><br>

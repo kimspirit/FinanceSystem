@@ -1,9 +1,8 @@
 package jxt.model;
 
 import javax.annotation.Generated;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,6 +18,7 @@ public class Finance {
     private int inCome;
     private int outCome;
     private String reason;
+    private Date addTime = new Date();
 
     @Id
     @GeneratedValue
@@ -52,5 +52,14 @@ public class Finance {
 
     public void setReason(String reason) {
         this.reason = reason;
+    }
+
+    public Date getAddTime() {
+        return addTime;
+    }
+
+    @Temporal(TemporalType.DATE)
+    public void setAddTime(Date addTime) {
+        this.addTime = addTime;
     }
 }

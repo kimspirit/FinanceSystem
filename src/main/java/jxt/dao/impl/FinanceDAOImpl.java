@@ -20,23 +20,23 @@ import java.util.List;
 public class FinanceDAOImpl implements FinanceDAO{
 
     private SessionFactory sessionFactory;
-    Session session ;
     @Override
     public void addIncident(Finance finance) {
         //To change body of implemented methods use File | Settings | File Templates.
-        session = sessionFactory.getCurrentSession();
+        Session session = sessionFactory.getCurrentSession();
         session.save(finance);
     }
 
     /**
-     *
      * 查询支出支入
      */
     @Override
     public List<Finance> queryList(String startDate, String endDate) {
-        StringBuffer sqlBuffer = new StringBuffer("select * from Finance where 1=1 ");
+
+        Session session = sessionFactory.getCurrentSession();
+        StringBuffer sqlBuffer = new StringBuffer("from FinanceSystem ");
         if(startDate!=null && endDate!=null){
-            sqlBuffer.append("addTime BETWEEN '"+startDate+" ' and '"+endDate+"'");
+            sqlBuffer.append(" where addTime BETWEEN '"+startDate+" ' and '"+endDate+"'");
         }
         String sql = sqlBuffer.toString();
         List<Finance> list = session.createQuery(sql).list();

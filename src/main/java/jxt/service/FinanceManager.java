@@ -2,6 +2,8 @@ package jxt.service;
 
 import jxt.model.Finance;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: karl
@@ -12,4 +14,6 @@ import jxt.model.Finance;
 public interface FinanceManager {
 
     public void saveIncident(Finance finance);
+
+    public List<Finance> queryFinance(String startDate, String endDate);
 }

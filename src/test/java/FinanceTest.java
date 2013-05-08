@@ -5,6 +5,10 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: karl
@@ -23,5 +27,16 @@ public class FinanceTest {
         finance.setInCome(1);
         finance.setReason("asd");
         manager.saveIncident(finance);
+    }
+
+    @Test
+    public void testQuery(){
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:ApplicationContext.xml");
+        FinanceManager manager = (FinanceManager)ctx.getBean("service");
+        List<Finance> list = manager.queryFinance("20130508","20130509");
+
+        for(int i= 0;i<list.size();i++){
+            System.out.println(list.get(i).getId());
+        }
     }
 }

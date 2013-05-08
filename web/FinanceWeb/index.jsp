@@ -15,5 +15,6 @@
     <s:property value="financeDTO.inCome"/>
     <s:property value="financeDTO.outCome"/>
     <s:property value="financeDTO.reason"/>
+
 </body>
 </html>

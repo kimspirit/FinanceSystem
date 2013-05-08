@@ -2,8 +2,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: karl
-  Date: 5/5/13
-  Time: 8:36 PM
+  Date: 5/6/13
+  Time: 7:13 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -12,11 +12,32 @@
     <title></title>
 </head>
 <body>
-<form action="add" method="post">
-    支入<input name="financeDTO.inCome"/><br>
-    支出<input name="financeDTO.outCome"/><br>
-    原因<input name="financeDTO.reason"/><br>
-    <s:submit value="确认"/>
-</form>
+    <s:form action="query">
+        <s:textfield name="financeDTO.statrTime" label="开始日期"></s:textfield>
+        <s:textfield name="financeDTO.endTime" label="结束日期"></s:textfield>
+        <s:submit label="确认" />
+    </s:form>
+
+    <table>
+        <tr>
+            <td></td>
+            <td>支入</td>
+            <td>支出</td>
+            <td>日期</td>
+            <td>原因</td>
+        </tr>
+
+
+    <s:iterator value="list">
+        <tr>
+            <td></td>
+            <td><s:property value="inCome"/> </td>
+            <td><s:property value="outCome"/></td>
+            <td><s:property value="addTime"/></td>
+            <td><s:property value="reason"/></td><br>
+        </tr>
+    </s:iterator>
+
+    </table>
 </body>
 </html>

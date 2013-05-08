@@ -6,8 +6,13 @@
 
 <struts>
     <package name="FinanceAction" extends="struts-default">
-        <action name="add" class="jxt.action.FinanceActions" method="FinanceAction">
-            <result name="success">/FinanceWeb/index.jsp</result>
+        <action name="add" class="jxt.action.FinanceActions" method="addAction">
+            <result name="success">/index.jsp</result>
+        </action>
+
+        <action name="query" class="jxt.action.FinanceActions" method="queryAction">
+            <result name="success">/index.jsp</result>
+            <result name="fail">/FinanceWeb/error.jsp</result>
         </action>
     </package>
 </struts>

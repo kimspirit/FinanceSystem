@@ -18,7 +18,7 @@
         <s:submit label="确认" />
     </s:form>
 
-    <table>
+    <table width="100%" border="1" cellspacing="0" cellpadding="0">
         <tr>
             <td></td>
             <td>支入</td>

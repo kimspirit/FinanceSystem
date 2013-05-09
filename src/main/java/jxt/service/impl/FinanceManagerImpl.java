@@ -28,6 +28,7 @@ public class FinanceManagerImpl implements FinanceManager{
 
     @Override
     public List<Finance> queryFinance(String startDate, String endDate) {
+
         Formate formate = new Formate();
         startDate = formate.forMate(startDate);
         endDate = formate.forMate(endDate);

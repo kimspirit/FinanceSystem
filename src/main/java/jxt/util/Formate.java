@@ -9,11 +9,14 @@ package jxt.util;
  */
 public class Formate {
     public String forMate(String string){
-        String year = string.substring(0,4);    //year
-        String month = string.substring(4,6);   //month
-        String day = string.substring(6,8);     //day
-
-        String date = year+"-"+month+"-"+day;
-        return date;
+        if(string.length()!=0){
+            String year = string.substring(0,4);    //year
+            String month = string.substring(4,6);   //month
+            String day = string.substring(6,8);     //day
+            String date = year+"-"+month+"-"+day;
+            return date;
+        }else {
+            return "";
+        }
     }
 }

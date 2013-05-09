@@ -35,7 +35,7 @@ public class FinanceDAOImpl implements FinanceDAO{
 
         Session session = sessionFactory.getCurrentSession();
         StringBuffer sqlBuffer = new StringBuffer("from FinanceSystem ");
-        if(startDate!=null && endDate!=null){
+        if(startDate!=null && endDate!=null && startDate != "" && endDate != ""){
             sqlBuffer.append(" where addTime BETWEEN '"+startDate+" ' and '"+endDate+"'");
         }
         String sql = sqlBuffer.toString();

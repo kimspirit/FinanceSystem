@@ -16,7 +16,7 @@
     支入<input name="financeDTO.inCome"/><br>
     支出<input name="financeDTO.outCome"/><br>
     原因<input name="financeDTO.reason"/><br>
-    <s:submit value="确认"/>
+    <input type="submit" value="确认"/>
 </form>
 </body>
 </html>

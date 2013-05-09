@@ -10,34 +10,39 @@
 <html>
 <head>
     <title></title>
+    <script  type="text/javascript" src="jquery-1.9.1.js">
+
+    </script>
 </head>
 <body>
-    <s:form action="query">
-        <s:textfield name="financeDTO.statrTime" label="开始日期"></s:textfield>
-        <s:textfield name="financeDTO.endTime" label="结束日期"></s:textfield>
-        <s:submit label="确认" />
-    </s:form>
+<s:form action="query">
+    <s:textfield name="financeDTO.statrTime" label="开始日期"></s:textfield>
+    <s:textfield name="financeDTO.endTime" label="结束日期"></s:textfield>
+    <s:submit label="确认" id="submit"/>
 
-    <table width="100%" border="1" cellspacing="0" cellpadding="0">
-        <tr>
-            <td></td>
-            <td>支入</td>
-            <td>支出</td>
-            <td>日期</td>
-            <td>原因</td>
-        </tr>
+</s:form>
+
+<table width="100%" border="1" cellspacing="0" cellpadding="0">
+    <tr>
+        <td></td>
+        <td>支入</td>
+        <td>支出</td>
+        <td>日期</td>
+        <td>原因</td>
+    </tr>
 
 
     <s:iterator value="list">
         <tr>
             <td></td>
-            <td><s:property value="inCome"/> </td>
+            <td><s:property value="inCome"/></td>
             <td><s:property value="outCome"/></td>
             <td><s:property value="addTime"/></td>
-            <td><s:property value="reason"/></td><br>
+            <td><s:property value="reason"/></td>
+            <br>
         </tr>
     </s:iterator>
-
-    </table>
+    <input type="button" value="添加" id="addButton"/>
+</table>
 </body>
 </html>

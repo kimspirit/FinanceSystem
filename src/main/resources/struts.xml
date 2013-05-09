@@ -7,7 +7,7 @@
 <struts>
     <package name="FinanceAction" extends="struts-default">
         <action name="add" class="jxt.action.FinanceActions" method="addAction">
-            <result name="success">/index.jsp</result>
+            <result name="success" type="redirect">query.action</result>
         </action>
 
         <action name="query" class="jxt.action.FinanceActions" method="queryAction">

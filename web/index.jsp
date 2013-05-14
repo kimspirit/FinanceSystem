@@ -29,20 +29,21 @@
         <td>支出</td>
         <td>日期</td>
         <td>原因</td>
+        <td>操作</td>
     </tr>
 
-
-    <s:iterator value="list">
+    <s:iterator value="list" status="status">
         <tr>
-            <td></td>
+            <td><s:property value="#status.count" /></td>
             <td><s:property value="inCome"/></td>
             <td><s:property value="outCome"/></td>
             <td><s:property value="addTime"/></td>
             <td><s:property value="reason"/></td>
+            <td>删除 &nbsp &nbsp &nbsp 编辑</td>
             <br>
         </tr>
     </s:iterator>
-    <input type="button" value="添加" id="addButton"/>
+    <input type="button" value="添加" onclick="window.location.href='http://localhost:8080/FinanceWeb/add.jsp'"/>
 </table>
 </body>
 </html>

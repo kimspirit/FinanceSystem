@@ -36,6 +36,12 @@ public class FinanceManagerImpl implements FinanceManager{
         return queryList;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
+    @Override
+    public void singleDelete(Finance finance) {
+        //To change body of implemented methods use File | Settings | File Templates.
+        financeDAO.delete(finance);
+    }
+
     public FinanceDAO getFinanceDAO() {
         return financeDAO;
     }

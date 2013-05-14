@@ -6,7 +6,12 @@
 
 <struts>
     <package name="FinanceAction" extends="struts-default">
+
         <action name="add" class="jxt.action.FinanceActions" method="addAction">
+            <result name="success" type="redirect">query.action</result>
+        </action>
+
+        <action name="singDelete" class="jxt.action.FinanceActions" method="singDeleteAcion">
             <result name="success" type="redirect">query.action</result>
         </action>
 

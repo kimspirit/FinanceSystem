@@ -1,6 +1,7 @@
 import jxt.model.Finance;
 import jxt.service.FinanceManager;
 import jxt.service.impl.FinanceManagerImpl;
+
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -34,9 +35,16 @@ public class FinanceTest {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:ApplicationContext.xml");
         FinanceManager manager = (FinanceManager)ctx.getBean("service");
         List<Finance> list = manager.queryFinance("20130508","20130509");
-
         for(int i= 0;i<list.size();i++){
             System.out.println(list.get(i).getId());
         }
+    }
+    @Test
+    public void testDelete(){
+        Finance finance = new Finance();
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:ApplicationContext.xml");
+        FinanceManager manager = (FinanceManager)ctx.getBean("service");
+        finance.setInCome(20);
+        manager.saveIncident(finance);
     }
 }

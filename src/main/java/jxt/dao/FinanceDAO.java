@@ -16,4 +16,8 @@ public interface FinanceDAO {
     public void addIncident(Finance finance);
 
     public List<Finance> queryList(String startDate,String endDate);
+
+    public void  delete(Finance finance);
+
+    public void edit(int id);
 }

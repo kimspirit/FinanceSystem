@@ -43,6 +43,32 @@ public class FinanceDAOImpl implements FinanceDAO{
         return list;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
+/**
+ * 删除操作
+ * @param finance
+ */
+    @Override
+    public void delete(Finance finance) {
+        Session session = sessionFactory.getCurrentSession();
+
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+/**
+ * 修改
+ * @param id
+ */
+    @Override
+    public void edit(int id) {
+
+
+    }
+
+
+    /**
+     * getter & setter
+     * @return
+     */
     public SessionFactory getSessionFactory() {
         return sessionFactory;
     }

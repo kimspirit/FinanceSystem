@@ -40,6 +40,16 @@ public class FinanceActions extends ActionSupport {
     }
 
     /**
+     * 删除
+     */
+
+    public String singDeleteAcion(){
+
+        return "success";
+    }
+
+
+    /**
      * 查询
      *
      * @return

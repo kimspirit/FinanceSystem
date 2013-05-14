@@ -43,7 +43,7 @@
             <br>
         </tr>
     </s:iterator>
-    <input type="button" value="添加" onclick="window.location.href='http://localhost:8080/FinanceWeb/add.jsp'"/>
+    <a href="FinanceWeb/add.jsp">添加</a>
 </table>
 </body>
 </html>

@@ -8,14 +8,17 @@ package jxt.util;
  * To change this template use File | Settings | File Templates.
  */
 public class Formate {
-    public String forMate(String string){
-        if(string.length()!=0){
-            String year = string.substring(0,4);    //year
-            String month = string.substring(4,6);   //month
-            String day = string.substring(6,8);     //day
-            String date = year+"-"+month+"-"+day;
+    public String forMate(String string) {
+        String date ="";
+        if (string != null) {
+            if (string.length() != 0) {
+                String year = string.substring(0, 4);    //year
+                String month = string.substring(4, 6);   //month
+                String day = string.substring(6, 8);     //day
+                date = year + "-" + month + "-" + day;
+            }
             return date;
-        }else {
+        } else {
             return "";
         }
     }

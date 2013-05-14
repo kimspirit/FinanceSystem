@@ -45,12 +45,13 @@ public class FinanceDAOImpl implements FinanceDAO{
 
 /**
  * 删除操作
- * @param finance
+ * @param id
  */
     @Override
-    public void delete(Finance finance) {
+    public void delete(int id) {
         Session session = sessionFactory.getCurrentSession();
-
+        Finance finance = (Finance)session.load(Finance.class,id);
+        session.delete(finance);
         //To change body of implemented methods use File | Settings | File Templates.
     }
 
@@ -61,7 +62,7 @@ public class FinanceDAOImpl implements FinanceDAO{
     @Override
     public void edit(int id) {
 
-
+      
     }
 
 

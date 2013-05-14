@@ -37,9 +37,9 @@ public class FinanceManagerImpl implements FinanceManager{
     }
 
     @Override
-    public void singleDelete(Finance finance) {
+    public void singleDelete(int id) {
         //To change body of implemented methods use File | Settings | File Templates.
-        financeDAO.delete(finance);
+        financeDAO.delete(id);
     }
 
     public FinanceDAO getFinanceDAO() {

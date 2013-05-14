@@ -17,5 +17,5 @@ public interface FinanceManager {
 
     public List<Finance> queryFinance(String startDate, String endDate);
 
-    public void singleDelete(Finance finance);
+    public void singleDelete(int id);
 }

@@ -44,7 +44,6 @@ public class FinanceTest {
         Finance finance = new Finance();
         ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:ApplicationContext.xml");
         FinanceManager manager = (FinanceManager)ctx.getBean("service");
-        finance.setInCome(20);
-        manager.saveIncident(finance);
+        manager.singleDelete(20);
     }
 }

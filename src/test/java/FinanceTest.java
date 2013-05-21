@@ -46,4 +46,22 @@ public class FinanceTest {
         FinanceManager manager = (FinanceManager)ctx.getBean("service");
         manager.singleDelete(20);
     }
+
+    @Test
+    public void testEdit(){
+
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:ApplicationContext.xml");
+        FinanceManager manager = (FinanceManager)ctx.getBean("service");
+        Finance finance = manager.singleQury(46);
+        System.out.println(finance.getInCome()+"  bofore");
+        System.out.println(finance.getOutCome()+"  bofore");
+        System.out.println(finance.getReason()+"  bofore");
+        finance.setInCome(400);
+        finance.setId(44);
+        finance.setOutCome(400);
+        System.out.println(finance.getInCome()+" after");
+        System.out.println(finance.getOutCome()+" after");
+        System.out.println(finance.getReason()+" after");
+        manager.editQuery(46);
+    }
 }

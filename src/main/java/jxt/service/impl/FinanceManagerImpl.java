@@ -42,6 +42,19 @@ public class FinanceManagerImpl implements FinanceManager{
         financeDAO.delete(id);
     }
 
+    @Override
+    public Finance singleQury(int id) {
+        Finance finance = financeDAO.queryById(id);
+        return finance;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void editQuery(int id) {
+        //To change body of implemented methods use File | Settings | File Templates.
+
+
+    }
+
     public FinanceDAO getFinanceDAO() {
         return financeDAO;
     }

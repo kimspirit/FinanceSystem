@@ -24,6 +24,7 @@ public class FinanceActions extends ActionSupport {
     private FinanceManager financeManager;
     private FinanceDTO financeDTO = new FinanceDTO();
     private List<Finance> list = new ArrayList<Finance>();
+    private Finance finance = new Finance();
 
     /**
      * 添加
@@ -36,6 +37,7 @@ public class FinanceActions extends ActionSupport {
         finance.setOutCome(financeDTO.getOutCome());
         finance.setReason(financeDTO.getReason());
         financeManager.saveIncident(finance);
+        System.out.print(finance.getReason());
         return "success";
     }
 
@@ -44,10 +46,22 @@ public class FinanceActions extends ActionSupport {
      */
 
     public String singDeleteAcion(){
-
+        financeManager.singleDelete(financeDTO.getId());
+        return "success";
+    }
+    /**
+     * 修改
+     */
+    public String querySingleAction(){
+        finance = financeManager.singleQury(financeDTO.getId());
+        System.out.print(finance.getInCome());
         return "success";
     }
 
+    public String editAction(){
+        financeManager.editQuery(financeDTO.getId());
+        return "success";
+    }
 
     /**
      * 查询
@@ -57,7 +71,6 @@ public class FinanceActions extends ActionSupport {
 
     public String queryAction() {
         list = financeManager.queryFinance(financeDTO.getStatrTime(), financeDTO.getEndTime());
-
         return "success";
 
     }
@@ -85,5 +98,14 @@ public class FinanceActions extends ActionSupport {
 
     public void setList(List<Finance> list) {
         this.list = list;
+
+    }
+
+    public Finance getFinance() {
+        return finance;
+    }
+
+    public void setFinance(Finance finance) {
+        this.finance = finance;
     }
 }

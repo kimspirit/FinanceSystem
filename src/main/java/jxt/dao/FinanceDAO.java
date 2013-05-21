@@ -19,5 +19,7 @@ public interface FinanceDAO {
 
     public void  delete(int id);
 
-    public void edit(int id);
+    public Finance queryById(int id);
+
+    public void edit(Finance finance);
 }

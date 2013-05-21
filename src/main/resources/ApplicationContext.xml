@@ -33,7 +33,7 @@
         </property>
         <property name="hibernateProperties">
             <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.format_sql">true</prop>
@@ -57,7 +57,8 @@
         <tx:attributes>
             <tx:method name="saveIncident*" propagation="REQUIRED"/>
             <tx:method name="query*" read-only="true"/>
-            <tx:method name="singleDelete*" propagation="REQUIRED"/>
+            <tx:method name="single*" propagation="REQUIRED" read-only="false"/>
+            <tx:method name="edit*" read-only="false"/>
         </tx:attributes>
     </tx:advice>
 

@@ -19,5 +19,13 @@
             <result name="success">/index.jsp</result>
             <result name="fail">/FinanceWeb/error.jsp</result>
         </action>
+
+        <action name="findById" class="jxt.action.FinanceActions" method="querySingleAction">
+            <result name="success">/FinanceWeb/edit.jsp</result>
+        </action>
+
+        <action name="edit" class="jxt.action.FinanceActions" method="editAction">
+            <result name="success" type="redirect">query.action</result>
+        </action>
     </package>
 </struts>

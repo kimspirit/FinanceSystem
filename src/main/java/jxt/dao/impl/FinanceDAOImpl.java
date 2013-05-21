@@ -52,17 +52,25 @@ public class FinanceDAOImpl implements FinanceDAO{
         Session session = sessionFactory.getCurrentSession();
         Finance finance = (Finance)session.load(Finance.class,id);
         session.delete(finance);
+//        session.createQuery("delete from FinanceSystem where id=:id").setParameter("id",id);
         //To change body of implemented methods use File | Settings | File Templates.
     }
 
-/**
+    @Override
+    public Finance queryById(int id) {
+        //To change body of implemented methods use File | Settings | File Templates.
+        Session session = sessionFactory.getCurrentSession();
+        Finance finance = (Finance)session.get(Finance.class,id);
+        return finance;
+    }
+
+    /**
  * 修改
- * @param id
+ * @param finance
  */
     @Override
-    public void edit(int id) {
+    public void edit(Finance finance) {
 
-      
     }
 
 
